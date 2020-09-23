@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id = "app">
+        <form>
+            <input placeholder="Enter your name here" v-model="writtenName" v-on:input="validation">
+        </form>
+        <h1 v-if="isActive == true" style="color: green;" > Access Granted welcome Mr/Ms. {{name}} </h1>
+        <h1 v-else-if="isActive == false" style="color:red;">Access Denied Sorry Mr/Ms.{{writtenName}}</h1>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: 'Deborey',
+                writtenName: '',
+                isActive: false,
+            },
+            methods: {
+                validation: function() {
+                    if(this.writtenName == this.name){
+                        this.isActive = true
+                    }else{
+                        this.isActive = false
+                    }
+                }
+            }
+        })
+    </script> 
+</body>
+</html>

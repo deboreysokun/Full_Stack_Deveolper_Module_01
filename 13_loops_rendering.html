@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr v-for="x in table_details">
+                <td>{{ x.id }}</td>
+                <td>{{ x.name }}</td>
+                <td>{{ x.age }}</td>
+            </tr>
+        </table>
+
+        <ol>
+            <li v-for="x in table_details">{{ x.id }}:{{ x.name }}:{{ x.age }}</li>
+        </ol>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                table_details: [
+                    {
+                        id: "1101801041",
+                        name: "Name1",
+                        age: "20"
+                    },
+                    {
+                        id: "1101801042",
+                        name: "Name2",
+                        age: "21"
+                    },
+                    {
+                        id: "1101801043",
+                        name: "Name3",
+                        age: "22"
+                    },
+                    {
+                        id: "1101801044",
+                        name: "Name4",
+                        age: "23"
+                    },
+                    {
+                        id: "1101801045",
+                        name: "Name5",
+                        age: "24"
+                    },
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

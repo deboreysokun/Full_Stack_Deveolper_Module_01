@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <outer/>
+    </div>
+
+    <script>
+        Vue.component('inner', {
+            data() {
+                return {
+                    studentDetails : [
+                        {id: 1101801041, name: 'Deborey', age: 19},
+                        {id: 1101801042, name: 'Comino', age: 90},
+                        {id: 1101801043, name: 'Visal', age: 110},
+                        {id: 1101801044, name: 'Sokreth', age: 24},
+                        {id: 1101801045, name: 'Panhboth', age: 25}
+                    ]
+                }
+            },
+            template: 
+                `<div>
+                    <li v-for="x in studentDetails">{{ x.id +':'+ x.name +':'+ x.age }}</li>
+                </div>`,
+        })
+
+        Vue.component('outer', {
+            data() {
+                return {
+                }
+            },
+            template: 
+                `<div>
+                    <ol>
+                        <inner/>
+                    </ol>
+                </div>`,
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+            },
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Exercise</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>  
+    <body>
+        <div id= "app">
+            <div v-on:mouseover="isActive = true" v-on:mouseleave="isActive = false" :class="isActive == true? 'active' : 'noActive'">{{message}}</div>
+        </div>
+
+        <style>
+            .active{
+                color: blue;
+                font-size: 40px;
+            }
+            .noActive{
+                color: red;
+                font-size: 30px;
+            }
+        </style>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data:{
+                    message: "Hello World",
+                    isActive: false
+                },
+                methods:{
+
+                }
+            })
+        </script>
+        
+    </body>
+</html>
